@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/javascript/app.js"></script>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Caveat|Josefin+Sans" rel="stylesheet"> -->
+    <title>Ron's Trivia Game</title>
+</head>
+
+<body>
+    <div class="container-fluid" style="width:90%">
+
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <a class="navbar-brand bg-dark" href="#"> Ron Seide</a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Say What, Satchel?</h2>
+                    <h6>The Wisdom of Satchel Paige</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>
+                        Leroy Robert “Satchel” Paige (1906?-1982), was a right-handed pitcher in both the Negro and
+                        Major Leagues and is considered by experts to be among the top twenty ballplayers of the 20th
+                        century. With a career spanning five decades, Satchel humbled the hitters of his day with
+                        arepertoire of colorfully-named pitches and uncanny accuracy&mdash; he could throw strikes over
+                        matchbooks.
+                    </p>
+                    <p>
+                        Satchel was signed by the Cleveland Indins as a 42-year-old “rookie” midway through the 1948
+                        season and was instrumental in the team winning the World Series that year. Players inclusive of
+                        Joe DiMaggio, Bob Feller and Josh Gibson agreed that Satchel was “the best pitcher they ever
+                        saw”.
+                    </p>
+                    <p>
+                        Beyond his prowess on the mound, Satchel Paige was a philosopher, dispensing his wisdom through
+                        scores of memorable quotes on a variety of topics. See if you can discern real “Satchel-isms”
+                        from those of lesser mortals. Click <a href="#gamePosition">here</a> to check out the game!
+                    </p>
+                    <div class="divider">
+                        <hr class="left" /><i class="fas fa-baseball-ball"></i>
+                        <hr class="right" />
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
+                    <img id="#jumboPic" src="assets/images/satchel_1.php" style: width=100% height="auto" />
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" id="qHeadline"></div>
+            <div class="col-md-3" id="aHeadline"></div>
+            <div class="col-md-3" id="imgHeadline"></div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+
+                <p id="qGraph">Curabitur non dictum augue. Duis aliquam aliquam elit, a euismod ligula egestas ut. Cras
+                    ut estconsectetur, interdum sem eu, placerat tellus. Praesent dapibus mattis
+                    porta.Suspendissefringilla, elit in aliquet feugiat, sapien velit scelerisque metus, at eleifend
+                    justo sapien ut</p>
+                <p>
+                    <p id="qButtons">
+                        <ul>
+                            <li><label><input type="radio" name="optradio" id="isSatchel">&nbsp;&nbsp;That sounds like Satchel</label></li>
+                            <li><label><input type="radio" name="optradio" id="notSatchel">&nbsp;&nbsp;That doesn't sound like Satchel</label></li>
+                        </ul>
+                    </p>
+                    <p id="qTimer"></p>
+
+            </div>
+            <div class="col-md-3" id="aGraph"></div>
+            <div class="col-md-3" id="imgGraph"></div>
+        </div>
+        <!-- <div class="row" id="timeRow">
+            <div class="col-md-6" id="timeRemaining">Time Remaining: xx seconds</div>
+            <div class="col-md-3" id="nextQin">Next Question in: xx seconds</div>
+            <div class="col-md-3" id="computerScore">Computer Score is: 00</div>
+        </div>
+        <div class="row" id="scoreRow">
+            <div class="col-md-6"></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3"  id="userScore">User Score is: 00</div>
+        </div> -->
+        <div class="row">
+            <div class="col-md-12" id="gamePosition"><br><br><br><br><br></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <footer class="sticky-bottom">
+                    <p>Copyright &copy; 2019</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
