@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    var qTimer = 0;
+    var qTimer = 10;
+    var stopTimer;
     var qOver = false;
     var aTimer = 0;
     // var aTimer = setInterval(timerForA, 1000);
@@ -44,6 +45,7 @@ $(document).ready(function () {
     ];
     $("#startGame").on("click", function () {
         displayQuestion()
+        qTimedCount ();
     });
     $("#qButtons").on("click", "#isSatchel", function () {
         if (questions[currentQuestion].isSatchel === true) {
@@ -51,12 +53,14 @@ $(document).ready(function () {
             userScore++;
             $("#aTimer").html("Time Remaining " + aTimer + " seconds");
             $("#imgGraph").attr("src", questions[currentQuestion].image);
+            clearTimeout (stopTimer);
             if (userScore < 3) {
                 $("#userScore").html("Your score is " + userScore);
             }
             else
                 $("#userScore").html("Game Over, you got " + userScore + " right");
             currentQuestion++;
+
             //A call to a timer function for aTimer would go here and would call function displayQuestion when aTimer === 0
         }
         else
@@ -64,6 +68,7 @@ $(document).ready(function () {
                 $("#aGraph").html(questions[currentQuestion].gotWrong);
                 $("#aTimer").html("Time Remaining " + aTimer + " seconds");
                 $("#imgGraph").attr("src", questions[currentQuestion].image);
+                clearTimeout (stopTimer);
                 currentQuestion++;
                 //A call to a timer function for aTimer would go here and would call function displayQuestion when aTimer === 0
 
@@ -76,6 +81,7 @@ $(document).ready(function () {
             $("#aGraph").html(questions[currentQuestion].gotWrong);
             $("#aTimer").html("Time Remaining " + aTimer + " seconds");
             $("#imgGraph").attr("src", questions[currentQuestion].image);
+            clearTimeout (stopTimer);
             currentQuestion++;
             //A call to a timer function for aTimer would go here and would call function displayQuestion when aTimer === 0
 
@@ -86,6 +92,7 @@ $(document).ready(function () {
                 userScore++;
                 $("#aTimer").html("Time Remaining " + aTimer + " seconds");
                 $("#imgGraph").attr("src", questions[currentQuestion].image);
+                clearTimeout (stopTimer);
                 //A call to a timer function for aTimer would go here and would call function displayQuestion when aTimer === 0
 
                 if (userScore < 3) {
@@ -99,7 +106,24 @@ $(document).ready(function () {
     });
     $("#newQuestion").on("click", function () {
         displayQuestion()
+        qTimer = 10;
+        qTimedCount();
+
     });
+    function qTimedCount() {
+        $(".qTimer").text("Time Remaining: " + qTimer);
+        console.log("Timer is " + qTimer);
+         qTimer --;
+         stopTimer = setTimeout(qTimedCount, 1000);
+    }
+    function aTimedCount() {
+        $(".qTimer").text("Time Remaining: " + aTimer);
+        console.log("Timer is " + aTimer);
+         aTimer --;
+         stopTimer = setTimeout(qTimedCount, 1000);
+    }
+
+
     function displayQuestion() {
         $("#qHeadline").html(questions[currentQuestion].qHeadline);
         $("#qGraph").html(questions[currentQuestion].quote);
