@@ -43,6 +43,9 @@ footer {
     background-color: #f8f9fa;
     margin-top: 1rem;
 }
+.invisible {
+    display: none;
+}
 /* #timeRow {
     padding: 1rem;
 }

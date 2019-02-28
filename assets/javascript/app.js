@@ -4,55 +4,72 @@ $(document).ready(function () {
     // var q1 = "q1 object as below";
     // var q2 = "q2 object as below";
     // console.log (quotes[0]);
-    var isSatchel = false;
-    var notSatchel = false;
     var qTimer = 0;
     var qOver = false;
-    var q1 = {
-        qHeadline: "<h5>Question One</h5>",
+    var aTime = 0;
+    var response ;
+    var currentQuestion = 0;
+    var questions = [{
+        qHeadline: "Question One",
         quote: "<blockquote>&quot;Don't look back, somebody might be gaining on you.&quot;</blockquote>",
+        isSatchel : true,
         gotRight: "Yup, Satchel said that.",
         gotWrong: "Nope, Satchel didn't say that.",
         goNoTime: "Time's up.",
-        //I can't get this image to display. I really want to display this image as an attribute of the q* object.
-        imgGraph: "img src=images/satchel_1.php"
-    };
-    $("#qHeadline").html(q1.qHeadline);
-    $("#qGraph").html(q1.quote);
-    //This jQuery blows up all other .html writes. I really want to display this html as an attribute of the q* object.
-    // $("#qButtons").html(<ul>
-    //     <li>Button 1</li>
-    //     <li>Button 2</li>
-    // </ul>);
+        image: "assets/images/satchel_1.php"
+    },
+        {
+        qHeadline: "Question One",
+        quote: "<blockquote>&quot;Don't look back, somebody might be gaining on you.&quot;</blockquote>",
+        isSatchel : true,
+        gotRight: "Yup, Satchel said that.",
+        gotWrong: "Nope, Satchel didn't say that.",
+        goNoTime: "Time's up.",
+        image: "assets/images/satchel_1.php"
+    },
+];
+
+    $("#startGame").on("click", function() {
+        // $("#qHeadline").addClass("invisible");
+        displayQuestion ();
+    });
+    $("#qHeadline").html(questions[currentQuestion].qHeadline);
+    $("#qGraph").html(questions[currentQuestion].quote);
+    $("#qButtons").html(
+        `<ul>
+            <li><label><input type="radio" name="optradio" id="isSatchel">&nbsp;&nbsp;That sounds like Satchel</label></li>
+            <li><label><input type="radio" name="optradio" id="notSatchel">&nbsp;&nbsp;That doesn't sound like Satchel</label></li>
+        </ul>`
+        );
     $("#isSatchel").on("click", function () {
-        isSatchel = true;
-        qOver = true;
-        displayAnswer ();
-        console.log("isSatchel is " + isSatchel);
-        console.log("qOver is " + qOver);
-    });
-    $("#notSatchel").on("click", function () {
-        notSatchel = true;
-        qOver = false;
-        displayAnswer ();
-        console.log("notSatchel is " + notSatchel);
-        console.log("qOver is " + qOver);
-    });
-    $("#qTimer").html("Time Remaining " + qTimer + " seconds");
-    //This is just a mess.
-    function displayAnswer () {
-        if (gotRight === true) {
-        $("aGraph").html("Yes, Satchel said that");
+        if (questions[currentQuestion].isSatchel === true) {
+            console.log(questions[currentQuestion].gotRight);
+            currentQuestion ++;
+            displayQuestion ();
         }
         else
-        if (gotWrong === true) {
-            $("aGraph").html("No, Satchel didn't say that");
-        }
+            console.log(q1.gotWrong);
+        // displayAnswer ();
+    });
+    function displayQuestion () {
+        console.log("hello displayQuestion")
+        $()
     };
+    $("#qTimer").html("Time Remaining " + qTimer + " seconds");
+    //This is just a mess.
+    // function displayAnswer () {
+    //     if (gotRight === true) {
+    //     $("aGraph").html("Yes, Satchel said that");
+    //     }
+    //     else
+    //     if (gotWrong === true) {
+    //         $("aGraph").html("No, Satchel didn't say that");
+    //     }
+    // };
     
     
-    //I can't get this image to display
-    $("#imgGraph").attr("satchel_1.php");
+
+    $("#imgGraph").attr("src", questions[currentQuestion].image);
 
 
 

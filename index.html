@@ -59,7 +59,7 @@
                     <p>
                         Beyond his prowess on the mound, Satchel Paige was a philosopher, dispensing his wisdom through
                         scores of memorable quotes on a variety of topics. See if you can discern real “Satchel-isms”
-                        from those of lesser mortals. Click <a href="#gamePosition">here</a> to check out the game!
+                        from those of lesser mortals. Click <a href="#gamePosition" id="startGame">here</a> to check out the game!
                     </p>
                     <div class="divider">
                         <hr class="left" /><i class="fas fa-baseball-ball"></i>
@@ -74,7 +74,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6" id="qHeadline"></div>
+            <div class="col-md-6"><h5 id="qHeadline"></h5></div>
             <div class="col-md-3" id="aHeadline"></div>
             <div class="col-md-3" id="imgHeadline"></div>
 
@@ -82,23 +82,22 @@
         <div class="row">
             <div class="col-md-6">
 
-                <p id="qGraph">Curabitur non dictum augue. Duis aliquam aliquam elit, a euismod ligula egestas ut. Cras
-                    ut estconsectetur, interdum sem eu, placerat tellus. Praesent dapibus mattis
-                    porta.Suspendissefringilla, elit in aliquet feugiat, sapien velit scelerisque metus, at eleifend
-                    justo sapien ut</p>
-                <p>
-                    <p id="qButtons">
-                        <ul>
+                <p id="qGraph"></p>
+                <p id="qButtons">
+                        <!-- <ul>
                             <li><label><input type="radio" name="optradio" id="isSatchel">&nbsp;&nbsp;That sounds like Satchel</label></li>
                             <li><label><input type="radio" name="optradio" id="notSatchel">&nbsp;&nbsp;That doesn't sound like Satchel</label></li>
-                        </ul>
+                        </ul> -->
                     </p>
-                    <p id="qTimer"></p>
+                <p id="qTimer"></p>
 
             </div>
             <div class="col-md-3" id="aGraph"></div>
-            <div class="col-md-3" id="imgGraph"></div>
+            <div class="col-md-3">
+                <img src="" alt="" id="imgGraph">
+            <div>
         </div>
+
         <!-- <div class="row" id="timeRow">
             <div class="col-md-6" id="timeRemaining">Time Remaining: xx seconds</div>
             <div class="col-md-3" id="nextQin">Next Question in: xx seconds</div>
