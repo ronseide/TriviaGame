@@ -20,14 +20,21 @@
 .right {
     float:right;
 }
-.jumbotron {
-    padding: 2rem;
-}
 .navbar-brand {
     padding-left: 2rem !important;
     padding-right: 2rem !important;
     color: #ffffff !important;
     text-align: center !important;
+}
+.jumbotron {
+    padding: 2rem;
+}
+#startGame {
+    color: darkgray;
+}
+#jumboPic {
+    width: 100%;
+    height: auto; 
 }
 #qHeadline {
     font-weight: bold;
@@ -36,6 +43,10 @@
     font-style: italic;
     padding-left: 1rem;
     padding-right: 1rem;
+}
+#imgGraph {
+    width: 100%;
+    height: auto; 
 }
 footer {
     text-align: center;
@@ -46,10 +57,4 @@ footer {
 .invisible {
     display: none;
 }
-/* #timeRow {
-    padding: 1rem;
-}
-#scoreRow {
-    padding: 1rem;
-} */
 

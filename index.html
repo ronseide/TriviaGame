@@ -12,13 +12,11 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/javascript/app.js"></script>
-    <!-- <link href="https://fonts.googleapis.com/css?family=Caveat|Josefin+Sans" rel="stylesheet"> -->
     <title>Ron's Trivia Game</title>
 </head>
 
 <body>
     <div class="container-fluid" style="width:90%">
-
         <nav class="navbar navbar-expand-md navbar-light bg-light">
             <a class="navbar-brand bg-dark" href="#"> Ron Seide</a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
@@ -77,39 +75,24 @@
             <div class="col-md-6"><h5 id="qHeadline"></h5></div>
             <div class="col-md-3" id="aHeadline"></div>
             <div class="col-md-3" id="imgHeadline"></div>
-
         </div>
         <div class="row">
             <div class="col-md-6">
-
                 <p id="qGraph"></p>
-                <p id="qButtons">
-                        <!-- <ul>
-                            <li><label><input type="radio" name="optradio" id="isSatchel">&nbsp;&nbsp;That sounds like Satchel</label></li>
-                            <li><label><input type="radio" name="optradio" id="notSatchel">&nbsp;&nbsp;That doesn't sound like Satchel</label></li>
-                        </ul> -->
-                    </p>
+                <p id="qButtons"></p>
                 <p id="qTimer"></p>
-
             </div>
-            <div class="col-md-3" id="aGraph"></div>
             <div class="col-md-3">
-                <img src="" alt="" id="imgGraph">
-            <div>
+            <p id="aGraph"></p>
+            <p id="aTimer"></p>
+            </div>
+            <div class="col-md-3"><img src="" alt="" id="imgGraph"></div>
         </div>
-
-        <!-- <div class="row" id="timeRow">
-            <div class="col-md-6" id="timeRemaining">Time Remaining: xx seconds</div>
-            <div class="col-md-3" id="nextQin">Next Question in: xx seconds</div>
-            <div class="col-md-3" id="computerScore">Computer Score is: 00</div>
-        </div>
-        <div class="row" id="scoreRow">
-            <div class="col-md-6"></div>
-            <div class="col-md-3"></div>
-            <div class="col-md-3"  id="userScore">User Score is: 00</div>
-        </div> -->
         <div class="row">
-            <div class="col-md-12" id="gamePosition"><br><br><br><br><br></div>
+            <div class="col-md-12" id="gamePosition"><br><br><br><br><br>
+            <button id="newQuestion">New Question</button>
+            <p id="userScore"></p>
+            </div>
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -119,9 +102,6 @@
             </div>
         </div>
     </div>
-
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -133,7 +113,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
-
 </body>
-
 </html>
