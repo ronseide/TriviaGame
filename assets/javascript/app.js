@@ -45,7 +45,7 @@ $(document).ready(function () {
     ];
     $("#startGame").on("click", function () {
         displayQuestion()
-        qTimedCount ();
+        console.log("start game timer " + qTimer);
     });
     $("#qButtons").on("click", "#isSatchel", function () {
         if (questions[currentQuestion].isSatchel === true) {
@@ -106,24 +106,25 @@ $(document).ready(function () {
     });
     $("#newQuestion").on("click", function () {
         displayQuestion()
-        qTimer = 10;
-        qTimedCount();
-
+        timedCount();
     });
-    function qTimedCount() {
+    if (qTimer !== 0) {
+        checkTime (qTimer);
+    }
+
+    function timedCount() {
+        console.log("timedCount is counting down " + qTimer);
+        qTimer --;
         $(".qTimer").text("Time Remaining: " + qTimer);
-        console.log("Timer is " + qTimer);
-         qTimer --;
-         stopTimer = setTimeout(qTimedCount, 1000);
+        stopTimer = setTimeout(timedCount, 1000);
     }
-    function aTimedCount() {
-        $(".qTimer").text("Time Remaining: " + aTimer);
-        console.log("Timer is " + aTimer);
-         aTimer --;
-         stopTimer = setTimeout(qTimedCount, 1000);
+    function checkTime (timer) {
+        if (timer > 0) {
+        }
+        else {
+            console.log("no time");
+        }
     }
-
-
     function displayQuestion() {
         $("#qHeadline").html(questions[currentQuestion].qHeadline);
         $("#qGraph").html(questions[currentQuestion].quote);
@@ -136,6 +137,12 @@ $(document).ready(function () {
         $("#aGraph").html("");
         $("#aTimer").html("");
         $("#imgGraph").attr("src", "assets/images/white.jpg");
+        console.log("in inside displayQuestion");
         $("#qTimer").html("Time Remaining " + qTimer + " seconds");
+        timedCount ();
+        
+
+
+
     };
 });
