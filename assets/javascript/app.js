@@ -151,7 +151,8 @@ $(document).ready(function () {
                 else {
                     $("#qHeadline").html("GAME OVER!");
                     $("#qGraph").html("")
-                    $("#qButtons").html("Refresh your browser to play again!");
+                    $("#qButtons").html("You got " + userScore + " out of " + currentQuestion + " right. Refresh your browser to play again!");
+                    $("#userScore").html("");
                     //currentQuestion = 0;
                     //userScore = 0;
                     // displayQuestion();
