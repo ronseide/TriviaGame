@@ -1,129 +1,166 @@
 $(document).ready(function () {
     var qTimer = 10;
     var stopTimer;
-    var qOver = false;
-    var aTimer = 0;
-    // var aTimer = setInterval(timerForA, 1000);
     var userScore = 0;
     var currentQuestion = 0;
-    var questions = [{
-        qHeadline: "Question One",
-        quote: "<blockquote>&quot;Don't look back, somebody might be gaining on you.&quot;</blockquote>",
-        isSatchel: true,
-        gotRight: "Q1 got right",
-        gotWrong: "Q1 got wrong",
-        goNoTime: "Time's up.",
-        image: "assets/images/satchel_1.php"
-    },
-    {
-        qHeadline: "Question Two",
-        quote: "<blockquote>&quot;The heart wants what it wants.&quot;</blockquote>",
-        isSatchel: false,
-        gotRight: "Q2 got right",
-        gotWrong: "Q2 got wrong",
-        goNoTime: "Time's up.",
-        image: "assets/images/emilyD.jpg"
-    },
-    {
-        qHeadline: "Question Three",
-        quote: "&quot;The business of America is business.&quot;",
-        isSatchel: false,
-        gotRight: "Q3 got right",
-        gotWrong: "Q3 got wrong",
-        goNoTime: "Time's up.",
-        image: "assets/images/calvinC.jpg"
-    },
-    {
-        qHeadline: "Question Four",
-        quote: "<blockquote>&quot;Avoid fried foods.&quot;</blockquote>",
-        isSatchel: true,
-        gotRight: "Q4 got right",
-        gotWrong: "Q4 got wrong",
-        goNoTime: "Time's up.",
-        image: "assets/images/satchel_1.php"
-    },
+    var questions = [
+        //     {
+        //     qHeadline: "Introduction",
+        //     quote: `<p>For each quote, guess if Satchel said it or someone else Press the start button to begin!<br><label><button type="button" id="startButton" class="btn btn-light">Start</button></label></p>`,
+        //     isSatchel: true,
+        //     gotRight: "Yup, Satchel said that.",
+        //     gotWrong: "Nope, Satchel said that.",
+        //     gotNoTime: "Time's up, Satchel said that.",
+        //     image: "assets/images/satchel_1.php"
+        // },
+        {
+            qHeadline: "Question One",
+            quote: "&quot;Don't look back. Something might be gaining on you.&quot;</blockquote>",
+            isSatchel: true,
+            gotRight: "Yup, Satchel said that.",
+            gotWrong: "Nope, Satchel said that.",
+            gotNoTime: "Time's up, Satchel said that.",
+            image: "assets/images/satchel_2.jpg"
+        },
+        {
+            qHeadline: "Question Two",
+            quote: "&quot;The heart wants what it wants.&quot;",
+            isSatchel: false,
+            gotRight: "Yup, Emily Dickenson said that.",
+            gotWrong: "Nope, Emily Dickenson said that.",
+            gotNoTime: "Time's up, Emily Dickenson said that.",
+            image: "assets/images/emilyD.jpg"
+        },
+        {
+            qHeadline: "Question Three",
+            quote: "&quot;The business of America is business.&quot;",
+            isSatchel: false,
+            gotRight: "Yup, Calvin Coolidge said that.",
+            gotWrong: "Nope, Calvin Cooldige said that.",
+            gotNoTime: "Time's up, Calvin Coolidge said that.",
+            image: "assets/images/calvinC.jpg"
+        },
+        {
+            qHeadline: "Question Four",
+            quote: "&quot;Don't eat fried food, it angries up the blood.&quot;",
+            isSatchel: true,
+            gotRight: "Yup, Satchel said that.",
+            gotWrong: "Nope, Satchel said that.",
+            gotNoTime: "Time's up, Satchel said that.",
+            image: "assets/images/satchel_3.jpg"
+        },
+        {
+            qHeadline: "Question Five",
+            quote: "&quot;Nutrition is so important. It can't be stressed enough.&quot;",
+            isSatchel: false,
+            gotRight: "Yup, The Rock said that.",
+            gotWrong: "Nope, The Rock said that.",
+            gotNoTime: "Time's up, Satchel said that.",
+            image: "assets/images/dwayneJ.jpg"
+        },
+        {
+            qHeadline: "Question Six",
+            quote: "&quot;I don't generally like running. I believe in training by rising gently up and down from the bench.&quot;",
+            isSatchel: true,
+            gotRight: "Yup, Satchel said that.",
+            gotWrong: "Nope, Satchel said that.",
+            gotNoTime: "Time's up, Satchel said that.",
+            image: "assets/images/satchel_4.jpg"
+        },
+
+        {
+            qHeadline: "GAME OVER",
+            quote: "&quot;You're the best.&quot;",
+            isSatchel: true,
+            gotRight: "Yup, Satchel said that.",
+            gotWrong: "Nope, Satchel said that.",
+            gotNoTime: "Time's up, Satchel said that.",
+            image: "assets/images/satchel_1.php"
+        }
     ];
+
     $("#startGame").on("click", function () {
         displayQuestion()
-        console.log("start game timer " + qTimer);
     });
+
     $("#qButtons").on("click", "#isSatchel", function () {
-        if (questions[currentQuestion].isSatchel === true) {
-            $("#aGraph").html(questions[currentQuestion].gotRight);
-            userScore++;
-            $("#aTimer").html("Time Remaining " + aTimer + " seconds");
-            $("#imgGraph").attr("src", questions[currentQuestion].image);
-            clearTimeout (stopTimer);
-            if (userScore < 3) {
-                $("#userScore").html("Your score is " + userScore);
-            }
-            else
-                $("#userScore").html("Game Over, you got " + userScore + " right");
-            currentQuestion++;
-
-            //A call to a timer function for aTimer would go here and would call function displayQuestion when aTimer === 0
+        if (qTimer <= 0) { //don't let the user guess if the time is up!
+            return;
         }
-        else
-            if (questions[currentQuestion].isSatchel !== true) {
-                $("#aGraph").html(questions[currentQuestion].gotWrong);
-                $("#aTimer").html("Time Remaining " + aTimer + " seconds");
-                $("#imgGraph").attr("src", questions[currentQuestion].image);
-                clearTimeout (stopTimer);
-                currentQuestion++;
-                //A call to a timer function for aTimer would go here and would call function displayQuestion when aTimer === 0
-
-            }
-        //A timer for qTimer would go here as the third option to end the question.
-
+        if (questions[currentQuestion].isSatchel === true) {
+            rightAnswer();
+        }
+        else if (questions[currentQuestion].isSatchel !== true) {
+            wrongAnswer();
+        }
     });
     $("#qButtons").on("click", "#notSatchel", function () {
-        if (questions[currentQuestion].isSatchel === true) {
-            $("#aGraph").html(questions[currentQuestion].gotWrong);
-            $("#aTimer").html("Time Remaining " + aTimer + " seconds");
-            $("#imgGraph").attr("src", questions[currentQuestion].image);
-            clearTimeout (stopTimer);
-            currentQuestion++;
-            //A call to a timer function for aTimer would go here and would call function displayQuestion when aTimer === 0
-
+        if (qTimer <= 0) { //don't let the user guess if the time is up!
+            return;
         }
-        else
-            if (questions[currentQuestion].isSatchel !== true) {
-                $("#aGraph").html(questions[currentQuestion].gotRight);
-                userScore++;
-                $("#aTimer").html("Time Remaining " + aTimer + " seconds");
-                $("#imgGraph").attr("src", questions[currentQuestion].image);
-                clearTimeout (stopTimer);
-                //A call to a timer function for aTimer would go here and would call function displayQuestion when aTimer === 0
-
-                if (userScore < 3) {
-                    $("#userScore").html("Your score is " + userScore);
-                }
-                else
-                    $("#userScore").html("Game Over, you got " + userScore + " right");
-                currentQuestion++;
-            }
-        //A timer for qTimer would go here as the third option to end the question.
+        if (questions[currentQuestion].isSatchel === true) {
+            wrongAnswer();
+        }
+        else if (questions[currentQuestion].isSatchel !== true) {
+            rightAnswer();
+        }
     });
-    $("#newQuestion").on("click", function () {
-        displayQuestion()
+    $("#startButton").on("click", function () {
+        currentQuestion = 0;
+        displayQuestion();
+    });
+
+    function answeredQuestion() {
+        $("#aTimer").html("Time Remaining " + aTimer + " seconds");
+        $("#qTimer").html("");
+        $("#imgGraph").attr("src", questions[currentQuestion].image);
+        qTimer = 0;
         timedCount();
-    });
-    if (qTimer !== 0) {
-        checkTime (qTimer);
     }
 
-    function timedCount() {
-        console.log("timedCount is counting down " + qTimer);
-        qTimer --;
-        $(".qTimer").text("Time Remaining: " + qTimer);
-        stopTimer = setTimeout(timedCount, 1000);
+    function rightAnswer() {
+        answeredQuestion();
+        $("#aGraph").html(questions[currentQuestion].gotRight);
+        userScore++;
     }
-    function checkTime (timer) {
-        if (timer > 0) {
+
+    function wrongAnswer() {
+        answeredQuestion();
+        $("#aGraph").html(questions[currentQuestion].gotWrong);
+    }
+    
+    function timedCount() {
+        clearTimeout(stopTimer);
+        qTimer--;
+        if (qTimer > 0) {
+            $("#qTimer").html("Time Remaining " + qTimer + " seconds");
+        }
+        else if (qTimer == 0) {
+            wrongAnswer();
+            $("#aGraph").html(questions[currentQuestion].gotNoTime);
+            return;
         }
         else {
-            console.log("no time");
+            $("#aTimer").html("Time Remaining " + (6 + qTimer) + " seconds");
+            if (6 + qTimer == 0) {
+                qTimer = 11;
+                currentQuestion++;
+                if (currentQuestion < 6) {
+                    displayQuestion();
+                }
+                else {
+                    $("#qHeadline").html("GAME OVER!");
+                    $("#qGraph").html("")
+                    $("#qButtons").html("Refresh your browser to play again!");
+                    //currentQuestion = 0;
+                    //userScore = 0;
+                    // displayQuestion();
+                    clearTimeout(stopTimer);
+                    return;
+                }
+            }
         }
+        stopTimer = setTimeout(timedCount, 1000);
     }
     function displayQuestion() {
         $("#qHeadline").html(questions[currentQuestion].qHeadline);
@@ -136,13 +173,10 @@ $(document).ready(function () {
         );
         $("#aGraph").html("");
         $("#aTimer").html("");
+        $("#userScore").html("Your score is " + userScore);
         $("#imgGraph").attr("src", "assets/images/white.jpg");
-        console.log("in inside displayQuestion");
         $("#qTimer").html("Time Remaining " + qTimer + " seconds");
-        timedCount ();
-        
-
-
-
+        qTimer = 11;
+        timedCount();
     };
 });

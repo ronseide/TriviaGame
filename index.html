@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/javascript/app.js"></script>
-    <title>Ron's Trivia Game</title>
+    <title>Say What Satchel?</title>
 </head>
 
 <body>
@@ -42,7 +42,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <p>
-                        Leroy Robert “Satchel” Paige (1906?-1982), was a right-handed pitcher in both the Negro and
+                        Leroy Robert “Satchel” Paige (1906-1982), was a right-handed pitcher in both the Negro and
                         Major Leagues and is considered by experts to be among the top twenty ballplayers of the 20th
                         century. With a career spanning five decades, Satchel humbled the hitters of his day with
                         arepertoire of colorfully-named pitches and uncanny accuracy&mdash; he could throw strikes over
@@ -57,7 +57,7 @@
                     <p>
                         Beyond his prowess on the mound, Satchel Paige was a philosopher, dispensing his wisdom through
                         scores of memorable quotes on a variety of topics. See if you can discern real “Satchel-isms”
-                        from those of lesser mortals. Click <a href="#gamePosition" id="startGame">here</a> to check out the game!
+                        from those of lesser mortals. Click <a href="#gamePosition" id="startLink">here</a> to check out the game!
                     </p>
                     <div class="divider">
                         <hr class="left" /><i class="fas fa-baseball-ball"></i>
@@ -71,14 +71,16 @@
                 <div class="col-md-1"></div>
             </div>
         </div>
+        <div class="row"></div>
+        <div class="col-md-12"><br><br><br></div>
         <div class="row">
-            <div class="col-md-6"><h5 id="qHeadline"></h5></div>
+            <div class="col-md-6"><h5 id="qHeadline">Introduction</h5></div>
             <div class="col-md-3" id="aHeadline"></div>
             <div class="col-md-3" id="imgHeadline"></div>
         </div>
         <div class="row">
-            <div class="col-md-6">
-                <p id="qGraph"></p>
+            <div class="col-md-6"><a name="gamePosition"></a>
+                <p id="qGraph">For each quote, guess if Satchel said it or someone else Press the start button to begin!<br><br><button type="button" id="startButton" class="btn btn-light">Start</button></p>
                 <p id="qButtons"></p>
                 <p id="qTimer"></p>
             </div>
@@ -89,13 +91,13 @@
             <div class="col-md-3"><img src="" alt="" id="imgGraph"></div>
         </div>
         <div class="row">
-            <div class="col-md-12" id="gamePosition"><br><br><br><br><br>
-            <button id="newQuestion">New Question</button>
+            <div class="col-md-12"><br>
             <p id="userScore"></p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
+                <p><br><br><br><br><br><br><br><br><br><br></p>
                 <footer class="sticky-bottom">
                     <p>Copyright &copy; 2019</p>
                 </footer>
