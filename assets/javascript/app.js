@@ -47,7 +47,7 @@ $(document).ready(function () {
             gotRight: "Yup, Satchel said that.",
             gotWrong: "Nope, Satchel said that.",
             gotNoTime: "Time's up, Satchel said that.",
-            image: "assets/images/Satchel_3.jpg"
+            image: "assets/images/satchel_3.jpg"
         },
         {
             qHeadline: "Question Five",
