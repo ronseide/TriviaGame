@@ -55,7 +55,7 @@ $(document).ready(function () {
             isSatchel: false,
             gotRight: "Yup, The Rock said that.",
             gotWrong: "Nope, The Rock said that.",
-            gotNoTime: "Time's up, Satchel said that.",
+            gotNoTime: "Time's up, The Rock said that.",
             image: "assets/images/dwayneJ.jpg"
         },
         {
